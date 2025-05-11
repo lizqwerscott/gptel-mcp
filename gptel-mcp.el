@@ -27,6 +27,9 @@
 
 ;;; Code:
 
+(require 'cl-lib)
+(eval-when-compile (require 'transient))
+
 (require 'mcp-hub)
 (require 'gptel)
 
