@@ -74,6 +74,7 @@ Returns a list in the form (CATEGORY NAME)."
        (message "start all server finish!")
        (gptel-mcp-register-tool))))
 
+;;;###autoload (autoload 'gptel-mcp-dispatch "gptel-mcp" nil t)
 (transient-define-prefix gptel-mcp-dispatch ()
   "Dispatch menu for gptel-mcp operations.
 Provides quick access to server management and tool activation commands."
