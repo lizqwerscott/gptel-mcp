@@ -1,0 +1,30 @@
+#+TITLE: gptel-mcp.el - Interface Integration for gptel.el and mcp.el
+
+[[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPLv3-blue.svg]]
+
+This package provides seamless integration between [[https://github.com/karthink/gptel][gptel]] and [[https://github.com/lizqwerscott/mcp.el][mcp.el]], enabling quick mcp server startup and tool management within gptel.
+
+* Installation
+1. Requires Emacs 30 or later
+2. Add to your ~/.emacs configuration:
+   #+begin_src elisp
+     (add-to-list 'load-path "<path-to-gptel-mcp.el>")
+     (require 'gptel-mcp)
+   #+end_src
+
+* Usage
+Launch the interface menu with =gptel-mcp-dispatch=
+
+Recommended key binding for gptel-mode-map:
+#+begin_src elisp
+  (keymap-set gptel-mode-map "C-c m" #'gptel-mcp-dispatch)
+#+end_src
+
+For use-package configuration:
+#+begin_src elisp
+  (use-package gptel-mcp
+    :ensure t
+    :vc (:url "https://github.com/lizqwerscott/gptel-mcp.el")
+    :bind (:map gptel-mode-map
+                ("C-c m" . gptel-mcp-dispatch)))
+#+end_src
